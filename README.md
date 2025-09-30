@@ -14,6 +14,11 @@
 
 ---
 
+## 🌐 Live Demo
+
+**🎯 Acesse a aplicação online:** [https://conectarteste.pages.dev/](https://conectarteste.pages.dev/)
+Ou baixe uma versão release aqui no GitHub.
+
 **Credenciais padrão do admin:**
 - Email: `admin@conectar.com`
 - Senha: `admin123`
@@ -473,7 +478,7 @@ android {
 ```
 
 #### **iOS**
-```plist
+```gradle
 <!-- ios/Runner/Info.plist -->
 <key>CFBundleURLSchemes</key>
 <array>
