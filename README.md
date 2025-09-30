@@ -16,7 +16,8 @@
 
 ## 🌐 Live Demo
 
-**🎯 Acesse a aplicação online:** [https://conectarteste.pages.dev/](https://conectarteste.pages.dev/)
+**🎯 Acesse a aplicação online:** [https://conectarteste.pages.dev/](https://conectarteste.pages.dev/)  
+Acesse o teste com Swagger da API:** [https://discussing-around-attorney-prototype.trycloudflare.com/api/](https://discussing-around-attorney-prototype.trycloudflare.com/api/)  
 Ou baixe uma versão release aqui no GitHub.
 
 **Credenciais padrão do admin:**
