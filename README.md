@@ -28,6 +28,8 @@ Ou baixe uma versão release aqui no GitHub.
 Na versão Web só se rodar em ambiente local com as credenciais que eu posso passar por ter chaves confidenciais.
 Na Cloudflare Pages grátis não é permitido usar Oauth do Google.
 
+Meu contato do WhatsApp: (21) 97526-3910
+
 ## 🎯 Sobre o Projeto
 
 O **Conectar App** é uma aplicação Flutter desenvolvida como parte de um teste técnico para a empresa Conéctar. O projeto demonstra a implementação de um sistema completo de gerenciamento de usuários com foco na **arquitetura limpa**, **segurança** e **experiência do usuário**.
