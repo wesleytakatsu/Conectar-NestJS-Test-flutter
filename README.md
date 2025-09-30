@@ -24,7 +24,7 @@ Ou baixe uma versão release aqui no GitHub.
 - Email: `admin@conectar.com`
 - Senha: `admin123`
 
-* OBS: Login com o Google disponível só no Android.
+* OBS: Login com o Google disponível só no Android e MacOS.
 Na versão Web só se rodar em ambiente local com as credenciais que eu posso passar por ter chaves confidenciais.
 Na Cloudflare Pages grátis não é permitido usar Oauth do Google.
 
