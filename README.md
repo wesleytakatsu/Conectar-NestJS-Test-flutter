@@ -1,4 +1,4 @@
-# 📱 Conectar App - Sistema de Gerenciamento de Usuários Flutter
+# 📱 Conéctar App - Sistema de Gerenciamento de Usuários Flutter
 
 <div align="center">
   
