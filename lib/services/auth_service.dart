@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../config/app_config.dart';
+import 'secure_storage_service.dart';
 
 class AuthService {
   late final Dio _dio;
-  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+  final _storage = SecureStorageService.instance;
 
   Dio get dio => _dio;
 

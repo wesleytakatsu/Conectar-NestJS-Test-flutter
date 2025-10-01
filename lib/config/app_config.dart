@@ -15,7 +15,7 @@ class AppConfig {
         _initializeWebConfig();
       } else {
         // Para outras plataformas, usar .env
-        await dotenv.load(fileName: ".env");
+        await dotenv.load();
         _initializeFromEnv();
       }
     } catch (e) {
@@ -25,7 +25,7 @@ class AppConfig {
   }
 
   static void _initializeWebConfig() {
-    apiUrl = 'http://localhost:3000';
+    apiUrl = 'https://discussing-around-attorney-prototype.trycloudflare.com';
     connectionTimeout = 10;
     receiveTimeout = 10;
     debugLogs = true;
@@ -39,7 +39,7 @@ class AppConfig {
   }
 
   static void _initializeDefaults() {
-    apiUrl = 'http://localhost:3000';
+    apiUrl = 'https://discussing-around-attorney-prototype.trycloudflare.com';
     connectionTimeout = 10;
     receiveTimeout = 10;
     debugLogs = true;
@@ -48,20 +48,20 @@ class AppConfig {
   static String _getApiUrl() {
     // Web - usar configuração hardcoded
     if (kIsWeb) {
-      return 'http://localhost:3000';
+      return 'https://discussing-around-attorney-prototype.trycloudflare.com';
     }
     
     // Android
     if (Platform.isAndroid) {
-      return dotenv.env['API_URL_ANDROID'] ?? 'http://192.168.1.30:3000';
+      return dotenv.env['API_URL_ANDROID'] ?? 'https://discussing-around-attorney-prototype.trycloudflare.com';
     }
     
     // iOS
     if (Platform.isIOS) {
-      return dotenv.env['API_URL_IOS'] ?? 'http://localhost:3000';
+      return dotenv.env['API_URL_IOS'] ?? 'https://discussing-around-attorney-prototype.trycloudflare.com';
     }
     
     // Desktop (Windows, macOS, Linux)
-    return dotenv.env['API_URL'] ?? 'http://localhost:3000';
+    return dotenv.env['API_URL'] ?? 'https://discussing-around-attorney-prototype.trycloudflare.com';
   }
 }

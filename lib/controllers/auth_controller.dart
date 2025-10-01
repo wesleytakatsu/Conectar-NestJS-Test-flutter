@@ -1,14 +1,14 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../services/auth_service.dart';
 import '../services/google_auth_service.dart';
+import '../services/secure_storage_service.dart';
 import '../models/user.dart';
 
 class AuthController extends ChangeNotifier {
   final AuthService _authService = AuthService();
   final GoogleAuthService _googleAuthService = GoogleAuthService();
-  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+  final _storage = SecureStorageService.instance;
 
   bool _isLoggedIn = false;
   bool _isGoogleLoading = false;

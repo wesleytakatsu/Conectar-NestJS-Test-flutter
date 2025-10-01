@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../models/user.dart';
 import '../config/app_config.dart';
+import 'secure_storage_service.dart';
 
 class UsersService {
   late final Dio _dio;
-  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+  final _storage = SecureStorageService.instance;
 
   UsersService() {
     _dio = Dio(BaseOptions(
