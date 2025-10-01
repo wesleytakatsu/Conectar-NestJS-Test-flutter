@@ -5,7 +5,7 @@ import 'package:conectar_app/config/app_config.dart';
 /// que precise do AppConfig configurado
 void setupTestConfig() {
   // Configurar AppConfig para testes com valores mocados
-  AppConfig.apiUrl = 'http://localhost:3000';
+  AppConfig.apiUrl = 'http://localhost:3010';
   AppConfig.connectionTimeout = 30;
   AppConfig.receiveTimeout = 30;
   AppConfig.debugLogs = false;
@@ -19,7 +19,7 @@ class TestConfig {
     int? receiveTimeout,
     bool? debugLogs,
   }) {
-    AppConfig.apiUrl = apiUrl ?? 'http://localhost:3000';
+    AppConfig.apiUrl = apiUrl ?? 'http://localhost:3010';
     AppConfig.connectionTimeout = connectionTimeout ?? 30;
     AppConfig.receiveTimeout = receiveTimeout ?? 30;
     AppConfig.debugLogs = debugLogs ?? false;
@@ -27,7 +27,7 @@ class TestConfig {
 
   static void setupForIntegrationTests() {
     setupWithCustomValues(
-      apiUrl: 'http://localhost:3000',
+      apiUrl: 'http://localhost:3010',
       connectionTimeout: 60,
       receiveTimeout: 60,
       debugLogs: true,
