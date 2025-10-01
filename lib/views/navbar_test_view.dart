@@ -118,7 +118,6 @@ class __TestNavbarContentState extends State<_TestNavbarContent> {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       color: Colors.white, 
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           _buildTabItem('Dados Básicos'), 
           _buildTabItem('Configurações'), // Exemplo de outra sub-aba

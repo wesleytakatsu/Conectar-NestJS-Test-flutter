@@ -19,7 +19,6 @@ class CustomTabBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       color: Colors.white,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: tabs
             .map((tab) => _buildTabItem(tab))
             .toList(),

@@ -85,7 +85,6 @@ class ClientsTable extends StatelessWidget {
           DataColumn2(
             label: Text('CNPJ',
                 style: TextStyle(fontWeight: FontWeight.bold)),
-            size: ColumnSize.M,
           ),
           DataColumn2(
             label: Text('Nome na fachada',

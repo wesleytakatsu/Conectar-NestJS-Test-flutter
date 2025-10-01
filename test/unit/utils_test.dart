@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:conectar_app/utils/input_formatters.dart';
 
 void main() {
   group('Input Formatters Tests', () {

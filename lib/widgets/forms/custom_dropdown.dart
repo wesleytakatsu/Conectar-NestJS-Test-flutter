@@ -36,13 +36,11 @@ class CustomDropdown extends StatelessWidget {
         DropdownButtonFormField<String>(
           style: const TextStyle(fontSize: 16, color: Colors.black87),
           decoration: InputDecoration(
-            labelText: null,
             hintText: hintText ?? 'Selecione',
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),
               borderSide: const BorderSide(
                 color: Colors.grey,
-                width: 1.0,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -56,7 +54,6 @@ class CustomDropdown extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
               borderSide: const BorderSide(
                 color: Colors.grey,
-                width: 1.0,
               ),
             ),
             isDense: true,

@@ -56,7 +56,6 @@ class ProfileCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: Colors.blue.withValues(alpha: 0.3),
-                      width: 1,
                     ),
                   ),
                   child: Row(
@@ -94,7 +93,6 @@ class ProfileCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: Colors.grey[300]!,
-              width: 1,
             ),
           ),
           child: Column(
@@ -187,7 +185,7 @@ class ProfileCard extends StatelessWidget {
       return CachedNetworkImage(
         imageUrl: imageUrl,
         fit: BoxFit.cover,
-        httpHeaders: {
+        httpHeaders: const {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
           'Accept': 'image/*,*/*;q=0.8',
         },

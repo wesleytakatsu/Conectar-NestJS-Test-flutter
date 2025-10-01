@@ -26,8 +26,8 @@ class LoginViewState extends State<LoginView> {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 50.0),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 50.0),
                     child: ConectarLogo(),
                   ),
                   LoginCard(

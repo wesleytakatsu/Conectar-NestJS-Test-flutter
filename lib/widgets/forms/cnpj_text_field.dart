@@ -43,13 +43,10 @@ class CnpjTextField extends StatelessWidget {
           keyboardType: TextInputType.number,
           onChanged: onChanged != null ? (_) => onChanged!() : null,
           decoration: InputDecoration(
-            labelText: null,
-            hintText: null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),
               borderSide: const BorderSide(
                 color: Colors.grey,
-                width: 1.0,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -63,7 +60,6 @@ class CnpjTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
               borderSide: const BorderSide(
                 color: Colors.grey,
-                width: 1.0,
               ),
             ),
             isDense: true,

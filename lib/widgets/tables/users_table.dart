@@ -115,7 +115,6 @@ class UsersTable extends StatelessWidget {
           DataColumn2(
             label: Text('Data Cadastro',
                 style: TextStyle(fontWeight: FontWeight.bold)),
-            size: ColumnSize.M,
           ),
         ],
         rows: users

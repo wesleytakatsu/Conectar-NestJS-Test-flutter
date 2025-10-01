@@ -20,7 +20,6 @@ class RegisterViewState extends State<RegisterView> {
         SnackBar(
           content: Text(message),
           backgroundColor: isError ? Colors.red : Colors.green,
-          duration: const Duration(seconds: 4),
         ),
       );
     }
@@ -91,8 +90,8 @@ class RegisterViewState extends State<RegisterView> {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 30.0),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 30.0),
                         child: ConectarLogo(),
                       ),
                       RegisterCard(

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:provider/provider.dart';
 import 'package:conectar_app/main.dart';
-import 'package:conectar_app/controllers/auth_controller.dart';
 import '../test_setup.dart';
 
 void main() {
@@ -19,7 +17,7 @@ void main() {
     testWidgets('should complete login flow successfully', (WidgetTester tester) async {
       // Launch a test version of the app
       await tester.pumpWidget(
-        MaterialApp(
+        const MaterialApp(
           home: Scaffold(
             body: Center(
               child: Text('Test Login Screen'),
@@ -42,7 +40,7 @@ void main() {
     testWidgets('should navigate through main app flows', (WidgetTester tester) async {
       // Launch a test version of the app
       await tester.pumpWidget(
-        MaterialApp(
+        const MaterialApp(
           home: Scaffold(
             body: Center(
               child: Text('Test Navigation Screen'),
@@ -119,7 +117,7 @@ void main() {
     group('Authentication Flow', () {
       testWidgets('should complete Google sign-in flow', (WidgetTester tester) async {
         await tester.pumpWidget(
-          MaterialApp(
+          const MaterialApp(
             home: Scaffold(
               body: Center(
                 child: Text('Test Google Auth Screen'),
@@ -137,7 +135,7 @@ void main() {
     group('Error Handling', () {
       testWidgets('should display appropriate errors for invalid login', (WidgetTester tester) async {
         await tester.pumpWidget(
-          MaterialApp(
+          const MaterialApp(
             home: Scaffold(
               body: Center(
                 child: Text('Test Error Handling'),
@@ -157,7 +155,7 @@ void main() {
         final stopwatch = Stopwatch()..start();
         
         await tester.pumpWidget(
-          MaterialApp(
+          const MaterialApp(
             home: Scaffold(
               body: Center(
                 child: Text('Test Performance Screen'),
@@ -176,7 +174,7 @@ void main() {
 
     group('Responsiveness', () {
       testWidgets('should adapt to different screen sizes', (WidgetTester tester) async {
-        final testApp = MaterialApp(
+        final testApp = const MaterialApp(
           home: Scaffold(
             body: Center(
               child: Text('Test Responsive Screen'),

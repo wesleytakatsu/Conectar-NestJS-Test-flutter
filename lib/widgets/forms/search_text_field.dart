@@ -43,16 +43,12 @@ class SearchTextField extends StatelessWidget {
           keyboardType: keyboardType,
           onChanged: onChanged,
           decoration: InputDecoration(
-            labelText: null,
             hintText: hintText,
-
-            prefixIcon: null,
 
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),
               borderSide: const BorderSide(
                 color: Colors.grey,
-                width: 1.0,
               ),
             ),
 
@@ -68,7 +64,6 @@ class SearchTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
               borderSide: const BorderSide(
                 color: Colors.grey,
-                width: 1.0,
               ),
             ),
 

@@ -10,7 +10,6 @@ class CnpjInputFormatter extends TextInputFormatter {
     }
     if (text.isEmpty) {
       return const TextEditingValue(
-        text: '',
         selection: TextSelection.collapsed(offset: 0),
       );
     }

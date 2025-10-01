@@ -30,8 +30,8 @@ class ConectarPageLayout extends StatelessWidget {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 30.0),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 30.0),
                     child: ConectarLogo(),
                   ),
                   Container(
