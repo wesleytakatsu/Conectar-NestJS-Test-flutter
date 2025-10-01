@@ -32,7 +32,7 @@ class ConectarPageLayout extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(bottom: 30.0),
-                    child: ConectarLogo(),
+                    child: const ConectarLogo(),
                   ),
                   Container(
                     width: cardWidth,

@@ -15,7 +15,7 @@ class AppConfig {
         _initializeWebConfig();
       } else {
         // Para outras plataformas, usar .env
-        await dotenv.load(fileName: ".env");
+        await dotenv.load(fileName: '.env');
         _initializeFromEnv();
       }
     } catch (e) {

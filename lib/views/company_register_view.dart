@@ -132,7 +132,7 @@ class CompanyRegisterViewState extends State<CompanyRegisterView> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(bottom: 30.0),
-                        child: ConectarLogo(),
+                        child: const ConectarLogo(),
                       ),
                       CompanyRegisterCard(
                         maxWidth: formWidth,

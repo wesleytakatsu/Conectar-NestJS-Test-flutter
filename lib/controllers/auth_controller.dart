@@ -1,14 +1,13 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../services/auth_service.dart';
 import '../services/google_auth_service.dart';
+import '../services/storage_service.dart';
 import '../models/user.dart';
 
 class AuthController extends ChangeNotifier {
   final AuthService _authService = AuthService();
   final GoogleAuthService _googleAuthService = GoogleAuthService();
-  final FlutterSecureStorage _storage = const FlutterSecureStorage();
 
   bool _isLoggedIn = false;
   bool _isGoogleLoading = false;
@@ -25,7 +24,7 @@ class AuthController extends ChangeNotifier {
 
   Future<void> checkLoginStatus() async {
     try {
-      String? token = await _storage.read(key: 'token');
+      String? token = await StorageService.read(key: 'token');
       if (token != null && token.isNotEmpty) {
         // Token existe, tentar buscar o perfil do usuário para validar
         try {
@@ -35,7 +34,7 @@ class AuthController extends ChangeNotifier {
           notifyListeners();
         } catch (e) {
           // Token inválido ou expirado, remover e marcar como deslogado
-          await _storage.delete(key: 'token');
+          await StorageService.delete(key: 'token');
           _isLoggedIn = false;
           _currentUser = null;
           notifyListeners();
@@ -55,8 +54,8 @@ class AuthController extends ChangeNotifier {
     try {
       var response = await _authService.login(email, password);
       
-      // Armazenar o token JWT no flutter_secure_storage
-      await _storage.write(key: 'token', value: response['access_token']);
+      // Armazenar o token JWT no storage
+      await StorageService.write(key: 'token', value: response['access_token']);
       
       // Atualizar o estado do usuário
       _currentUser = User.fromJson(response['user']);
@@ -87,7 +86,7 @@ class AuthController extends ChangeNotifier {
       }
       
       // Remover o token do armazenamento seguro
-      await _storage.delete(key: 'token');
+      await StorageService.delete(key: 'token');
       
       // Limpar o estado
       _isLoggedIn = false;
@@ -124,7 +123,7 @@ class AuthController extends ChangeNotifier {
           );
           
           // Armazenar o token JWT recebido do backend
-          await _storage.write(key: 'token', value: response['access_token']);
+          await StorageService.write(key: 'token', value: response['access_token']);
           
           // Atualizar o estado do usuário com os dados do backend
           _currentUser = User.fromJson(response['user']);
@@ -134,16 +133,16 @@ class AuthController extends ChangeNotifier {
         }
       }
       
-      // Primeiro tentar o método simplificado (sem Firebase)
+      // Para outras plataformas (incluindo macOS), usar o método simplificado sem Firebase
       final GoogleSignInAccount? googleUser = await _googleAuthService.signInWithGoogleSimple();
       
       if (googleUser != null) {
-        // Para desenvolvimento, vamos simular um token
+        // Para desenvolvimento/macOS, simular um token
         final simulatedToken = 'dev_token_${DateTime.now().millisecondsSinceEpoch}';
         
         // Enviar dados para o backend para login/registro
         final response = await _authService.googleAuth(
-          idToken: simulatedToken, // Token simulado para desenvolvimento
+          idToken: simulatedToken,
           email: googleUser.email,
           name: googleUser.displayName ?? 'Usuário',
           googleId: googleUser.id,
@@ -151,42 +150,12 @@ class AuthController extends ChangeNotifier {
         );
         
         // Armazenar o token JWT recebido do backend
-        await _storage.write(key: 'token', value: response['access_token']);
+        await StorageService.write(key: 'token', value: response['access_token']);
         
         // Atualizar o estado do usuário com os dados do backend
         _currentUser = User.fromJson(response['user']);
         _isLoggedIn = true;
         notifyListeners();
-        return;
-      }
-      
-      // Se o método simplificado falhar, tentar o método com Firebase
-      final GoogleSignInAccount? googleUserFirebase = await _googleAuthService.signInWithGoogle();
-      
-      if (googleUserFirebase != null) {
-        // Obter o token do Firebase para enviar para o backend
-        final String? idToken = await _googleAuthService.getFirebaseIdToken();
-        
-        if (idToken != null) {
-          // Enviar dados para o backend para login/registro
-          final response = await _authService.googleAuth(
-            idToken: idToken,
-            email: googleUserFirebase.email,
-            name: googleUserFirebase.displayName ?? 'Usuário',
-            googleId: googleUserFirebase.id,
-            photoURL: googleUserFirebase.photoUrl,
-          );
-          
-          // Armazenar o token JWT recebido do backend
-          await _storage.write(key: 'token', value: response['access_token']);
-          
-          // Atualizar o estado do usuário com os dados do backend
-          _currentUser = User.fromJson(response['user']);
-          _isLoggedIn = true;
-          notifyListeners();
-        } else {
-          throw Exception('Não foi possível obter o token de autenticação do Firebase');
-        }
       }
     } catch (e) {
       // Re-throw do erro para que possa ser tratado na UI
@@ -197,9 +166,10 @@ class AuthController extends ChangeNotifier {
     }
   }
 
-  Future<void> updateProfile(Map<String, dynamic> profileData) async {
+  /// Atualizar perfil do usuário
+  Future<void> updateProfile(Map<String, dynamic> userData) async {
     try {
-      final response = await _authService.updateProfile(profileData);
+      final response = await _authService.updateProfile(userData);
       _currentUser = User.fromJson(response);
       notifyListeners();
     } catch (e) {
