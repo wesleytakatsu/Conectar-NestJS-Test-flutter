@@ -473,7 +473,7 @@ android {
 ```
 
 #### **iOS**
-```plist
+```gradle
 <!-- ios/Runner/Info.plist -->
 <key>CFBundleURLSchemes</key>
 <array>
