@@ -182,7 +182,7 @@ class CompanyEditViewState extends State<CompanyEditView> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(bottom: 30.0),
-                          child: ConectarLogo(),
+                          child: const ConectarLogo(),
                         ),
                         CompanyEditCard(
                           maxWidth: formWidth,

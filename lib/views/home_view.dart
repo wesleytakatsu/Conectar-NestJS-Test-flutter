@@ -154,9 +154,9 @@ class _DashboardGridState extends State<DashboardGrid> {
       builder: (context, authController, child) {
         List<DashboardItem> items = [
           DashboardItem(
-            title: "Meu Perfil",
-            subtitle: "Gerenciar informações pessoais",
-            event: "",
+            title: 'Meu Perfil',
+            subtitle: 'Gerenciar informações pessoais',
+            event: '',
             icon: Icons.person,
             onTap: () => context.go('/profile'),
           ),
@@ -166,23 +166,23 @@ class _DashboardGridState extends State<DashboardGrid> {
         if (authController.currentUser?.role == 'admin') {
           items.addAll([
              DashboardItem(
-              title: "Clientes",
-              subtitle: "Visualizar empresas cadastradas",
-              event: "",
+              title: 'Clientes',
+              subtitle: 'Visualizar empresas cadastradas',
+              event: '',
               icon: Icons.business,
               onTap: () => context.go('/companies'),
             ),
             DashboardItem(
-              title: "Usuários",
-              subtitle: "Gerenciar usuários do sistema",
-              event: "",
+              title: 'Usuários',
+              subtitle: 'Gerenciar usuários do sistema',
+              event: '',
               icon: Icons.people,
               onTap: () => context.go('/users'),
             ),
             DashboardItem(
-              title: "Novo Cliente",
-              subtitle: "Cadastrar nova empresa",
-              event: "",
+              title: 'Novo Cliente',
+              subtitle: 'Cadastrar nova empresa',
+              event: '',
               icon: Icons.add_business,
               onTap: () => context.go('/company-register'),
             ),
@@ -192,9 +192,9 @@ class _DashboardGridState extends State<DashboardGrid> {
         // Adicionar itens adicionais para completar o grid
         items.addAll([
           DashboardItem(
-            title: "Relatórios",
-            subtitle: "Visualizar dados e métricas",
-            event: "Botão só de enfeite para estilizar",
+            title: 'Relatórios',
+            subtitle: 'Visualizar dados e métricas',
+            event: 'Botão só de enfeite para estilizar',
             icon: Icons.assessment,
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -205,9 +205,9 @@ class _DashboardGridState extends State<DashboardGrid> {
             },
           ),
           DashboardItem(
-            title: "Configurações",
-            subtitle: "Preferências do sistema",
-            event: "Botão só de enfeite para estilizar",
+            title: 'Configurações',
+            subtitle: 'Preferências do sistema',
+            event: 'Botão só de enfeite para estilizar',
             icon: Icons.settings,
             onTap: () => context.go('/navbar-test'), // Temporário para demonstração
           ),

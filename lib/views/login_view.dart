@@ -28,7 +28,7 @@ class LoginViewState extends State<LoginView> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(bottom: 50.0),
-                    child: ConectarLogo(),
+                    child: const ConectarLogo(),
                   ),
                   LoginCard(
                     maxWidth: formWidth,

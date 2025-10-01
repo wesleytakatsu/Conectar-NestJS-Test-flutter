@@ -93,7 +93,7 @@ class RegisterViewState extends State<RegisterView> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(bottom: 30.0),
-                        child: ConectarLogo(),
+                        child: const ConectarLogo(),
                       ),
                       RegisterCard(
                         maxWidth: formWidth,

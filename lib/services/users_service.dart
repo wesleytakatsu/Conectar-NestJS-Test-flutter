@@ -22,10 +22,8 @@ class UsersService {
     _dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
         String? token = await _storage.read(key: 'token');
-        if (token != null) {
-          options.headers['Authorization'] = 'Bearer $token';
-        }
-        return handler.next(options);
+        options.headers['Authorization'] = 'Bearer $token';
+              return handler.next(options);
       },
     ));
   }

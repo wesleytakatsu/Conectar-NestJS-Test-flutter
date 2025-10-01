@@ -8,6 +8,7 @@ import 'controllers/auth_controller.dart';
 import 'controllers/users_controller.dart';
 import 'controllers/company_controller.dart';
 import 'services/company_service.dart';
+import 'services/storage_service.dart';
 import 'config/app_config.dart';
 
 void main() async {
@@ -18,6 +19,13 @@ void main() async {
     await AppConfig.initialize();
   } catch (e) {
     // Erro ao carregar configuração, usar padrões
+  }
+
+  // Inicializar StorageService
+  try {
+    await StorageService.init();
+  } catch (e) {
+    // Erro ao inicializar storage, continuará sem problemas
   }
 
   // Inicializar Firebase com tratamento de erro para plataformas desktop
